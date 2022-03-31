@@ -1,0 +1,96 @@
+@import './config'
+
+html
+  global-reset()
+  reset-html5()
+
+body
+  overscroll-behavior-y none
+
+#app
+  font-family $font_family
+
+  font-size ($fpc)px
+
+  line-height $lh
+
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  -webkit-text-size-adjust 100%
+
+  -webkit-print-color-adjust exact
+
+  font-feature-settings 'palt' 1
+
+  color $font_color_default
+  break_word()
+
+  +break_point(pc)
+    .display-none--sp
+      display none
+  +break_point(sp)
+    .display-none--pc
+      display none
+
+a
+  link_style('', '', '', '')
+  &:focus
+    outline none
+
+a,
+input[type="submit"],
+button
+label
+select
+  rollover()
+  &:disabled
+    cursor default
+    opacity 1 !important
+
+button
+  margin 0
+  padding 0
+  background none
+  appearance none
+  line-height inherit
+  border none
+  font-size inherit
+  font-family inherit
+  font-weight inherit
+  outline none
+  color inherit
+  &::-moz-focus-inner
+    border none
+
+input
+  appearance none
+  border-radius 0
+  color inherit
+  &:focus
+    outline none
+
+select,
+input[type="submit"],
+button,
+label
+  color inherit
+  cursor pointer
+
+select
+  appearance none
+  border none
+  outline none
+  background transparent
+
+img,
+svg
+  max-width 100%
+  width 100%
+  height auto
+  vertical-align top
+
+picture
+  max-width 100%
+
+font_size_responsive('#app')
+
