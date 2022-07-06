@@ -183,6 +183,10 @@ rollover($type = 'opacity', $def = .6)
       &:hover
         opacity $def
         text-decoration none
+    &.disabled,
+    &:disabled
+      cursor default
+      opacity 1 !important
 
   else if $type == 'underline'
     text-decoration none
@@ -194,6 +198,10 @@ rollover($type = 'opacity', $def = .6)
     {$dumouse} &
       &:hover
         text-decoration underline
+    &.disabled,
+    &:disabled
+      cursor default
+      text-decoration none !important
 
   else if $type == 'none'
     text-decoration underline
@@ -205,6 +213,10 @@ rollover($type = 'opacity', $def = .6)
     {$dumouse} &
       &:hover
         text-decoration none
+    &.disabled,
+    &:disabled
+      cursor default
+      text-decoration underline !important
 
   else if $type == 'false'
     text-decoration none
@@ -217,6 +229,10 @@ rollover($type = 'opacity', $def = .6)
     {$dumouse} &
       &:hover
         text-decoration none
+    &.disabled,
+    &:disabled
+      cursor default
+      text-decoration none !important
 
 adj($num)
   ($num * 2)
